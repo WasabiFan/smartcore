@@ -115,9 +115,9 @@ pub struct SVCParameters<T: RealNumber, M: Matrix<T>, K: Kernel<T, M::RowVector>
 pub struct SVC<T: RealNumber, M: Matrix<T>, K: Kernel<T, M::RowVector>> {
     classes: Vec<T>,
     kernel: K,
-    instances: Vec<M::RowVector>,
-    w: Vec<T>,
-    b: T,
+    pub instances: Vec<M::RowVector>,
+    pub w: Vec<T>,
+    pub b: T,
 }
 
 #[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
